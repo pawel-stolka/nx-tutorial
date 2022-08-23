@@ -16,22 +16,19 @@ export class AppComponent {
     { title: 'todo1' },
     { title: 'todo2' },
   ]
-  url = '/api/todos';
 
   constructor(private http: HttpClient) { 
     this.fetch();
   }
 
   fetch() {
-    this.http.get<Todo[]>(this.url).subscribe(todos => this.todos = todos);
+    this.http.get<Todo[]>('/api/todos').subscribe(todos => this.todos = todos);
   }
 
   addTodo() {
-    this.http.post<Todo>(this.url, {}).subscribe(() => {
+    this.http.post<Todo>('/api/addTodo', {}).subscribe(() => {
       this.fetch();
     });
-    // this.todos.push({
-    //   title: `todo ${Math.floor(Math.random() * 100)}`
-    // })
+    
   }
 }
