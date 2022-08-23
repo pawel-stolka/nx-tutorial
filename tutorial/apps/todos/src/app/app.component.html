@@ -1,0 +1,15 @@
+<!-- <tutorial-nx-welcome></tutorial-nx-welcome> -->
+<h1>
+    <span> Hello there, </span>
+    Welcome todos 👋
+</h1>
+
+<div>
+    <button id="add-todo" (click)="addTodo()">add</button>
+</div>
+
+<ul>
+    <li *ngFor="let t of todos" class="todo">
+        {{ t.title }}
+    </li>
+</ul>
