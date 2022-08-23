@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Todo } from "@tutorial/data";
 
-interface Todo {
-  title: string;
-}
 
 @Component({
   selector: 'tutorial-root',
